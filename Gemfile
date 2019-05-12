@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'bootstrap', '~> 4.3.1'
 gem 'devise'
 gem 'mysql'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

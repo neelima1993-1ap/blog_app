@@ -3,7 +3,7 @@
 class Authors::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
   
-
+  prepend_before_filter :require_no_authentication, only: [:cancel ]
   # GET /resource/sign_in
   def new
     super
@@ -15,9 +15,9 @@ class Authors::SessionsController < Devise::SessionsController
   # end
 
   # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+  def destroy
+    super
+  end
 
   # protected
 

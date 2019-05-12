@@ -1,0 +1,3 @@
+<h2>Welcome <%= @author.email %></h2>
+
+<%= button_to "Sign out", destroy_author_session_path , method: :delete %>

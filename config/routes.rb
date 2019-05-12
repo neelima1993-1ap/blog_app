@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :authors , controllers: { sessions: 'authors/sessions' , registrations: 'authors/registrations'}
+  
+  devise_for :authors , controllers: { sessions: 'authors/sessions' , registrations: 'authors/registrations', }
 
-  root to: 'author#index'
+  # root to: 'author#index'
+  devise_scope :author do
+    authenticated :author do
+      root 'author#index', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'authors/sessions#new', as: :unauthenticated_root
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

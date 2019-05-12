@@ -4,6 +4,7 @@ class AuthorController < ApplicationController
 	protect_from_forgery prepend: true
 
 	def index
+		@author = current_author
 	end
 
 end
