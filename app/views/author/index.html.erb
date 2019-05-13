@@ -1,3 +1,32 @@
-<h2>Welcome <%= @author.email %></h2>
+<!DOCTYPE html>
+<html lang="en">
+<body>
 
-<%= button_to "Sign out", destroy_author_session_path , method: :delete %>
+<nav class="navbar navbar-expand-sm bg-light">
+    <ul class="navbar-nav">
+	    <li class="nav-item">
+	      <a class="nav-link" href="#">Home</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" href="#">Views</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" href="#">Followers</a>
+	    </li>
+	 </ul>
+
+    <ul class="navbar-nav ml-auto">
+	    <li class="nav-item ">
+	       <%= button_to "Sign out", destroy_author_session_url , class: "nav-link btn btn-danger btn-mini", method: :delete %>
+	    </li>
+    </ul>
+</nav>
+<br>
+
+<div class="container-fluid">
+	<h2>Welcome, <%= @author.first_name %></h2>
+    <%= render 'articles/form' %></br> 
+</div>
+
+</body>
+</html>
